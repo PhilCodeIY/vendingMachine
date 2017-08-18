@@ -35,7 +35,7 @@ app.get("/items/all", function(req, res, next){
      res.json(results)
    })
 })
-//       Not needed for project////
+//   This is not needed for project-----/
 // THIS RETURNS 1 ITEM BY ID NUMBER
 //METHOD: getURL: /ITEMS/{ID}
 //RESPONSE: {ID: INTEGER}, DESCRIPTION, COST QUANTITIY
@@ -64,13 +64,13 @@ app.get("/items/all", function(req, res, next){
 // })
 
 //A customer should be able to buy an item using money
-//Making a purchase nd get correct change///
+//Making a purchase and get correct change///
 
-//the following is not neede for project as per Ryan 8/18
+//the following is not needed for project as per Ryan 8/18
 // the current code will return change as success but also
-//asks for money due (a negative number) as a success. In
-//the future update the method when more money is due as a fail.
-
+// will ask for money due (a negative number) as a success.
+//In the future update the code when more money is due as a fail.
+//------
 app.post("/items/money/:itemid", function(req, res, next){
   const itemid1 = req.params.itemid
 
@@ -100,8 +100,9 @@ app.post("/items/money/:itemid", function(req, res, next){
     }
   })
 })
-////////
-//Customer purchasing an item
+//-------
+
+//--Customer purchasing an item--
 app.post("/items/purch/:itemid", function(req, res, next){
   const itemid = req.params.itemid
 
@@ -208,7 +209,7 @@ app.put("/items/:id", function(req, res, next){
           status: "fail",
           data: (results),
           message: "update of an existing record did not occur",
-        })
+      })
     }
   })
 })
@@ -237,7 +238,7 @@ app.post("/items/add", function(req, res, next){
           status: "fail",
           data:(results),
           message: " new item was not created",
-        })
+      })
     }
   })
 })
